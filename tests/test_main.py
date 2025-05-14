@@ -1,8 +1,7 @@
-from unittest.mock import patch
-
 import pytest
 
 from src.main import Category, Product, read_json
+from unittest.mock import Mock
 
 
 @pytest.fixture

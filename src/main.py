@@ -26,8 +26,9 @@ class Category:
         Category.product_count += len(products)
 
 
-def read_json() -> dict:
-    with open("../data/products.json", encoding="utf-8") as f:
+def read_json(way) -> dict:
+    '''Функция чтения json файла и возврата словаря со списками объектов категорий и продуктов'''
+    with open(way, encoding="utf-8") as f:
         data = json.load(f)
         category_list = []
         product_list = []
@@ -54,4 +55,4 @@ def read_json() -> dict:
 
 
 if __name__ == "__main__":
-    print(read_json())
+    print(read_json("../data/products.json"))
