@@ -1,7 +1,8 @@
 class Product:
     """Класс для представления продукта"""
 
-    def __init__(self, name: str, description: str, price: float, quantity: int):
+    def __init__(self, name: str, description: str,
+                 price: float, quantity: int):
         self.name = name
         self.description = description
         self.price = price
@@ -24,7 +25,8 @@ class Category:
 
 
 def read_json(way) -> dict:
-    '''Функция чтения json файла и возврата словаря со списками объектов категорий и продуктов'''
+    '''Функция чтения json файла и возврата словаря
+    со списками объектов категорий и продуктов'''
     with open(way, encoding="utf-8") as f:
         data = json.load(f)
         category_list = []
@@ -34,7 +36,8 @@ def read_json(way) -> dict:
             category_list.append(cat)
         for i in category_list:
             for c in i.products:
-                prod = Product(c["name"], c["description"], c["price"], c["quantity"])
+                prod = Product(c["name"], c["description"],
+                               c["price"], c["quantity"])
                 product_list.append(prod)
         # print(category_list)
         # print(category_list[0].name)
